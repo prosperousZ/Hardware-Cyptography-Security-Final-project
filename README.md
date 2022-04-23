@@ -11,7 +11,7 @@ visual cryptography schemes.
 - src (pending) : source files
 - application (pending) :
 - papers : related papers
-
+- utility : proprietary files
 
 ## Run
 ```bash

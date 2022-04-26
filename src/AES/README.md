@@ -14,7 +14,6 @@ the paper. There are four generated files:
 
 ## Files
 - main.py : the implementation 
-- photo.jpg : the original image
 
 ## Run
 ```

@@ -9,14 +9,14 @@ import math
 # Mean Square Error
 # img1 is the path to the image1
 # img2 is the path to the image2
-def MSE(self, img1, img2):
+def MSE(img1, img2):
   image1 = Image.open(img1)
   image2 = Image.open(img2)
   
   image1 = np.asarray(image1);
   image2 = np.asarray(image2);
   
-  mse = np.mean((image1, image2) ** 2)
+  mse = np.mean((image1 - image2) ** 2)
 
   return mse
 
@@ -24,14 +24,14 @@ def MSE(self, img1, img2):
 # Peak Signal-to-Noise Ratio
 # img1 is the path to the image1
 # img2 is the path to the image2
-def PSNR(self, img1, img2):
+def PSNR(img1, img2):
   image1 = Image.open(img1);
   image2 = Image.open(img2);
   
   image1 = np.asarray(image1);
   image2 = np.asarray(image2);
   
-  mse = np.mean((image1, image2) ** 2)
+  mse = np.mean((image1 - image2) ** 2)
   
   if mse == 0:
     return 100

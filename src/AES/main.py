@@ -11,6 +11,10 @@ import cv2
 import sys, getopt
 import pandas as pd
 
+sys.path.insert(0, "../../utility")
+import performance
+
+
 
 class AESCipher:
   def __init__(self, data, key):
@@ -38,11 +42,8 @@ class AESCipher:
 
 
 def encryption(inputimage):
-  #K = "this is ece 6960 hardware cryptography"
-  K = "Hello, World. ThisIsMyKey."
+  K = "this is ece 6960 hardware cryptography"
   SK = hashlib.sha256(K.encode())
-  #print("The hexadecimal equivalent of SHA256 is : ") 
-  #print(SK.hexdigest())
 
   with open(inputimage, "rb") as image:
     BI = base64.b64encode(image.read())
@@ -89,25 +90,6 @@ def encryption(inputimage):
   # generate P share
   filename = "P.png"
   cv2.imwrite(filename, P)
-
-  #xdf = pd.DataFrame(columns = ['1','2'])
-  #ydf = pd.DataFrame(columns = ['1','2'])
-  #a = []
-  #b = []
-  #for i in P:
-  #  k = 0
-  #  n1 = []
-  #  n2 = []
-  #  for j in i:
-  #    if k%2 == 0:
-  #      n1.append(np.sum(j))
-  #    else:
-  #      n2.append(np.sum(j))
-  #    k += 1
-  #  a.append(sum(n1))
-  #  b.append(sum(n2))
-  #xdf['1'] = a
-  #xdf['2'] = b
     
   txt = []
   for ci in CI:
@@ -117,7 +99,8 @@ def encryption(inputimage):
   text = ""
   for t in txt:
     text += chr(t) + " "
-    
+   
+  # write ciphertext to a file  
   f = open("./cipher.txt", "w", encoding = "utf-8")
   f.write(text)
   f.close() 
@@ -125,13 +108,14 @@ def encryption(inputimage):
 
 
 def decryption():
+  # read in the ciphertext 
   f = open("./cipher.txt", "r", encoding = "utf-8")
   cipher = f.read()
   f.close()
-  print(len(cipher))
-  cipher = cipher.split(' ')
-  print(len(cipher))
   
+  cipher = cipher.split(' ')
+ 
+  # read in two shares 
   P = cv2.imread("P.png")
   R = cv2.imread("R.png")
 
@@ -195,10 +179,16 @@ def parse(argv):
       sys.exit()
     elif opt in ("-i", "--ifile"):
       inputimage = arg
-  #print("Input file is " + inputimage)
   return inputimage
+
+
 
 if __name__ == "__main__":
   image = parse(sys.argv[1:])
   encryption(image)
   decryption()
+
+  MSE = performance.MSE(image, "./decryptedImage.jpg")
+  print("MSE = " + str(MSE))
+  PSNR = performance.PSNR(image, "./decryptedImage.jpg")
+  print("PSNR = " + str(PSNR))

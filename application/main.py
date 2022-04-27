@@ -58,16 +58,16 @@ def generateExtraction(name):
 
 def applyCCT(pixel, mode):
   cct = Image.new("CMYK", [2, 2])
-  
+  #print(pixel) 
   # pixel is black
-  if pixel[0] == 255 and pixel[1] == 255 and pixel[2] == 255:
+  if pixel[0] > 200 and pixel[1] > 200 and pixel[2] > 200:
     cct.putpixel((0, 0), (255, 255, 255, 0))
     cct.putpixel((0, 1), (255, 255, 255, 0))
     cct.putpixel((1, 0), (255, 255, 255, 0))
     cct.putpixel((1, 1), (255, 255, 255, 0))
   
   # pixel is blue 
-  elif pixel[0] == 255 and pixel[1] == 255 and pixel[2] == 0:
+  elif pixel[0] > 200 and pixel[1] > 200 and pixel[2] < 100:
     if mode == 1:
       cct.putpixel((0, 0), (255, 255, 0, 0))
       cct.putpixel((0, 1), (255, 255, 255, 0))
@@ -80,7 +80,7 @@ def applyCCT(pixel, mode):
       cct.putpixel((1, 1), (255, 255, 255, 0))
          
   # pixel is green 
-  elif pixel[0] == 255 and pixel[1] == 0 and pixel[2] == 255:
+  elif pixel[0] > 200 and pixel[1] < 100 and pixel[2] > 200:
     if mode == 1:
       cct.putpixel((0, 0), (255, 0, 255, 0))
       cct.putpixel((0, 1), (255, 255, 255, 0))
@@ -93,7 +93,7 @@ def applyCCT(pixel, mode):
       cct.putpixel((1, 1), (255, 255, 255, 0))
 
   # pixel is cyan 
-  elif pixel[0] == 255 and pixel[1] == 0 and pixel[2] == 0:
+  elif pixel[0] > 200 and pixel[1] < 100 and pixel[2] < 100:
     if mode == 1:
       cct.putpixel((0, 0), (255, 0, 0, 0))
       cct.putpixel((0, 1), (255, 255, 255, 0))
@@ -106,7 +106,7 @@ def applyCCT(pixel, mode):
       cct.putpixel((1, 1), (255, 255, 255, 0))
   
   # pixel is red 
-  elif pixel[0] == 0 and pixel[1] == 255 and pixel[2] == 255:
+  elif pixel[0] < 100 and pixel[1] > 200 and pixel[2] > 200:
     if mode == 1:
       cct.putpixel((0, 0), (0, 255, 255, 0))
       cct.putpixel((0, 1), (255, 255, 255, 0))
@@ -119,7 +119,7 @@ def applyCCT(pixel, mode):
       cct.putpixel((1, 1), (255, 255, 255, 0))
 
   # pixel is Magenta 
-  elif pixel[0] == 0 and pixel[1] == 255 and pixel[2] == 0:
+  elif pixel[0] < 100 and pixel[1] > 200 and pixel[2] < 100:
     if mode == 1:
       cct.putpixel((0, 0), (0, 255, 0, 0))
       cct.putpixel((0, 1), (255, 255, 255, 0))
@@ -132,7 +132,7 @@ def applyCCT(pixel, mode):
       cct.putpixel((1, 1), (255, 255, 255, 0))
 
   # pixel is yellow
-  elif pixel[0] == 0 and pixel[1] == 0 and pixel[2] == 255:
+  elif pixel[0] < 100 and pixel[1] < 100 and pixel[2] > 200:
     if mode == 1:
       cct.putpixel((0, 0), (0, 0, 255, 0))
       cct.putpixel((0, 1), (255, 255, 255, 0))
@@ -170,49 +170,49 @@ def applySCT(pixel):
   sct_1.putpixel((1, 1), (0, 255, 0, 0))
   
   # pixel is black
-  if pixel[0] == 255 and pixel[1] == 255 and pixel[2] == 255:
+  if pixel[0] > 200 and pixel[1] > 200 and pixel[2] > 200:
     sct_2.putpixel((0, 0), (0, 255, 0, 0))
     sct_2.putpixel((1, 0), (0, 0, 0, 0))
     sct_2.putpixel((0, 1), (255, 0, 0, 0))
     sct_2.putpixel((1, 1), (0, 0, 255, 0))
   
   # pixel is blue 
-  elif pixel[0] == 255 and pixel[1] == 255 and pixel[2] == 0:
+  elif pixel[0] > 200 and pixel[1] > 200 and pixel[2] < 100:
     sct_2.putpixel((0, 0), (0, 0, 255, 0))
     sct_2.putpixel((1, 0), (0, 255, 0, 0))
     sct_2.putpixel((0, 1), (0, 0, 0, 0))
     sct_2.putpixel((1, 1), (255, 0, 0, 0))
          
   # pixel is green 
-  elif pixel[0] == 255 and pixel[1] == 0 and pixel[2] == 255:
+  elif pixel[0] > 200 and pixel[1] < 100 and pixel[2] > 200:
     sct_2.putpixel((0, 0), (255, 0, 0, 0))
     sct_2.putpixel((1, 0), (0, 0, 255, 0))
     sct_2.putpixel((0, 1), (0, 0, 0, 0))
     sct_2.putpixel((1, 1), (0, 255, 0, 0))
 
   # pixel is cyan 
-  elif pixel[0] == 255 and pixel[1] == 0 and pixel[2] == 0:
+  elif pixel[0] > 200 and pixel[1] < 100 and pixel[2] < 100:
     sct_2.putpixel((0, 0), (0, 0, 255, 0))
     sct_2.putpixel((1, 0), (0, 0, 0, 0))
     sct_2.putpixel((0, 1), (255, 0, 0, 0))
     sct_2.putpixel((1, 1), (0, 255, 0, 0))
   
   # pixel is red 
-  elif pixel[0] == 0 and pixel[1] == 255 and pixel[2] == 255:
+  elif pixel[0] < 100 and pixel[1] > 200 and pixel[2] > 200:
     sct_2.putpixel((0, 0), (0, 255, 0, 0))
     sct_2.putpixel((1, 0), (255, 0, 0, 0))
     sct_2.putpixel((0, 1), (0, 0, 0, 0))
     sct_2.putpixel((1, 1), (0, 0, 255, 0))
 
   # pixel is Magenta 
-  elif pixel[0] == 0 and pixel[1] == 255 and pixel[2] == 0:
+  elif pixel[0] < 100 and pixel[1] > 200 and pixel[2] < 100:
     sct_2.putpixel((0, 0), (0, 0, 255, 0))
     sct_2.putpixel((1, 0), (255, 0, 0, 0))
     sct_2.putpixel((0, 1), (0, 255, 0, 0))
     sct_2.putpixel((1, 1), (0, 0, 0, 0))
 
   # pixel is yellow
-  elif pixel[0] == 0 and pixel[1] == 0 and pixel[2] == 255:
+  elif pixel[0] < 100 and pixel[1] < 100 and pixel[2] > 200:
     sct_2.putpixel((0, 0), (0, 0, 0, 0))
     sct_2.putpixel((1, 0), (255, 0, 0, 0))
     sct_2.putpixel((0, 1), (0, 0, 255, 0))
@@ -229,9 +229,9 @@ def applySCT(pixel):
 
 
 def generateShares():
-  image_1 = Image.open("outputs/Extraction_1.jpg")
-  image_2 = Image.open("outputs/Extraction_2.jpg")
-  image_s = Image.open("outputs/Extraction_s.jpg")
+  image_1 = Image.open("outputs/Extraction_1.jpg").convert("CMYK")
+  image_2 = Image.open("outputs/Extraction_2.jpg").convert("CMYK")
+  image_s = Image.open("outputs/Extraction_s.jpg").convert("CMYK")
 
   share_1 = Image.new("CMYK", [image_1.size[0]*4, image_1.size[1]*2])
   share_2 = Image.new("CMYK", [image_1.size[0]*4, image_1.size[1]*2])
@@ -239,13 +239,17 @@ def generateShares():
 
   for x in range(0, image_1.size[0], 1):
     for y in range(0, image_1.size[1], 1):
+      #print("x = " + str(x) + ", y = " + str(y) + " , mode = 1")
       cct_1 = applyCCT(image_1.getpixel((x, y)), 1)
+      #print("x = " + str(x) + ", y = " + str(y) + " , mode = 2")
       cct_2 = applyCCT(image_2.getpixel((x, y)), 2)
       sct_1, sct_2 = applySCT(image_s.getpixel((x, y)))
 
       # odd row
       if x%2 == 1:
         share_1.putpixel((4*x, 2*y), cct_1.getpixel((0, 0)))
+        #print(cct_1.getpixel((0, 0)))
+        #print("-----------")
         share_1.putpixel((4*x, 2*y+1), cct_1.getpixel((0, 1)))
         share_1.putpixel((4*x+1, 2*y), cct_1.getpixel((1, 0)))
         share_1.putpixel((4*x+1, 2*y+1), cct_1.getpixel((1, 1)))
@@ -292,23 +296,53 @@ def generateShares():
 
 
 def emulateSuperposition():
-  share_1 = Image.open("outputs/Share_1.jpg")
-  share_2 = Image.open("outputs/Share_2.jpg")
+  share_1 = Image.open("outputs/Share_1.jpg").convert("CMYK")
+  share_2 = Image.open("outputs/Share_2.jpg").convert("CMYK")
 
   superposition = Image.new("CMYK", [share_1.size[0], share_1.size[1]])
 
-  for x in range(0, share_1.size[0], 1):
-    for y in range(0, share_1.size[1], 1):
-      print("share_1[" + str(x) + ", " + str(y) + "] = ")
-      print(share_1.getpixel((x, y)))
-      print("share_2[" + str(x) + ", " + str(y) + "] = ")
-      print(share_2.getpixel((x, y)))
+  for i in range(0, share_1.size[0], 1):
+    for j in range(0, share_1.size[1], 1):
+      #print("share_1[" + str(i) + ", " + str(j) + "] = ")
+      #print(share_1.getpixel((i, j)))
+      #print("share_2[" + str(i) + ", " + str(j) + "] = ")
+      #print(share_2.getpixel((i, j)))
 
-      c = share_1.getpixel((x, y))[0] or share_2.getpixel((x, y))[0]
-      m = share_1.getpixel((x, y))[1] or share_2.getpixel((x, y))[1]
-      y = share_1.getpixel((x, y))[2] or share_2.getpixel((x, y))[2]
-      print("c = " + str(c) + ", m = " + str(m) + ", y = " + str(y))
-      superposition.putpixel((x, y),(c, m, y, 0) );
+      if share_1.getpixel((i, j))[0] > 200:
+        c1 = 255
+      else:
+        c1 = 0
+      
+      if share_1.getpixel((i, j))[1] > 200:
+        m1 = 255
+      else:
+        m1 = 0
+
+      if share_1.getpixel((i, j))[2] > 200:
+        y1 = 255
+      else:
+        y1 = 0
+
+      if share_2.getpixel((i, j))[0] > 200:
+        c2 = 255
+      else:
+        c2 = 0
+      
+      if share_2.getpixel((i, j))[1] > 200:
+        m2 = 255
+      else:
+        m2 = 0
+
+      if share_2.getpixel((i, j))[2] > 200:
+        y2 = 255
+      else:
+        y2 = 0
+
+      c = c1 or c2
+      m = m1 or m2
+      y = y1 or y2
+      
+      superposition.putpixel((i, j),(c, m, y, 0) );
 
   superposition.save("outputs/Superposition.jpg")
 
@@ -325,16 +359,16 @@ def parse(argv):
 if __name__ == "__main__":
   image1, image2, secret = parse(sys.argv[1:])       
  
-#  generateCMYK(image1, "1") 
-#  generateCMYK(image2, "2") 
-#  generateCMYK(secret, "s") 
-#  generateHalftone("1")
-#  generateHalftone("2")
-#  generateHalftone("s")
-# 
-#  generateExtraction("1")
-#  generateExtraction("2")
-#  generateExtraction("s")
+  generateCMYK(image1, "1") 
+  generateCMYK(image2, "2") 
+  generateCMYK(secret, "s") 
+  generateHalftone("1")
+  generateHalftone("2")
+  generateHalftone("s")
+ 
+  generateExtraction("1")
+  generateExtraction("2")
+  generateExtraction("s")
 
-#  generateShares()
+  generateShares()
   emulateSuperposition()

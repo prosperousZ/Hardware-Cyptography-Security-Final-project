@@ -360,7 +360,6 @@ def parse(argv):
 if __name__ == "__main__":
   image1, image2, secret = parse(sys.argv[1:])       
  
-  CHECK_FOLDER = os.path.isdir("outputs")
   if not os.path.isdir("outputs"):
     os.makedirs("outputs")
   

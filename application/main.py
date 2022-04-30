@@ -2,6 +2,7 @@ import numpy as np
 from PIL import Image
 import cv2
 import sys
+import os
 
 
 def generateCMYK(path, name):
@@ -359,6 +360,10 @@ def parse(argv):
 if __name__ == "__main__":
   image1, image2, secret = parse(sys.argv[1:])       
  
+  CHECK_FOLDER = os.path.isdir("outputs")
+  if not os.path.isdir("outputs"):
+    os.makedirs("outputs")
+  
   generateCMYK(image1, "1") 
   generateCMYK(image2, "2") 
   generateCMYK(secret, "s") 

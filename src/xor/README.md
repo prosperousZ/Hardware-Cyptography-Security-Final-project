@@ -1,6 +1,6 @@
+# Visual Cryptography with XOR Implementation
 
-
-## ECE6960
+## What is this implementation about?
 The purpose of this implementation is to encrypt and decrypt an image 
 using XOR and measure the performance.
 
@@ -11,3 +11,8 @@ If you change the number of shares, or new image, it will clean up
 all the previous images automatically.
 
 Photo must be .jpg, if you run another type of photo, error will occur
+
+## Run
+```
+python3 ./main.py ./image1.jpg
+```

@@ -296,9 +296,120 @@ def generateShares():
   share_2.save("outputs/Share_2.jpg")
 
 
-def emulateSuperposition():
+def generateOurShares():
+  image_1 = Image.open("outputs/Halftone_1.jpg").convert("CMYK")
+  image_2 = Image.open("outputs/Halftone_2.jpg").convert("CMYK")
+  image_s = Image.open("outputs/Halftone_s.jpg").convert("CMYK")
+
+  share_1 = Image.new("CMYK", [image_1.size[0]*4, image_1.size[1]*4])
+  share_2 = Image.new("CMYK", [image_1.size[0]*4, image_1.size[1]*4])
+
+
+  for x in range(0, image_1.size[0], 1):
+    for y in range(0, image_1.size[1], 1):
+      #print("x = " + str(x) + ", y = " + str(y) + " , mode = 1")
+      cct_1 = applyCCT(image_1.getpixel((x, y)), 1)
+      #print("x = " + str(x) + ", y = " + str(y) + " , mode = 2")
+      cct_2 = applyCCT(image_2.getpixel((x, y)), 2)
+      sct_1, sct_2 = applySCT(image_s.getpixel((x, y)))
+
+      # odd row
+      if x%2 == 1:
+        share_1.putpixel((4*x, 4*y), cct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x, 4*y+1), cct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+1, 4*y), cct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+1, 4*y+1), cct_1.getpixel((1, 1)))
+        
+        share_1.putpixel((4*x+2, 4*y), sct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x+2, 4*y+1), sct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+3, 4*y), sct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+3, 4*y+1), sct_1.getpixel((1, 1)))
+        
+        share_1.putpixel((4*x, 4*y+2), cct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x, 4*y+3), cct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+1, 4*y+2), cct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+1, 4*y+3), cct_1.getpixel((1, 1)))
+
+        share_1.putpixel((4*x+2, 4*y+2), sct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x+2, 4*y+3), sct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+3, 4*y+2), sct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+3, 4*y+3), sct_1.getpixel((1, 1)))
+        
+        
+        share_2.putpixel((4*x, 4*y), cct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x, 4*y+1), cct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+1, 4*y), cct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+1, 4*y+1), cct_2.getpixel((1, 1)))
+        
+        share_2.putpixel((4*x+2, 4*y), sct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x+2, 4*y+1), sct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+3, 4*y), sct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+3, 4*y+1), sct_2.getpixel((1, 1)))
+     
+        share_2.putpixel((4*x, 4*y+2), cct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x, 4*y+3), cct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+1, 4*y+2), cct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+1, 4*y+3), cct_2.getpixel((1, 1)))
+        
+        share_2.putpixel((4*x+2, 4*y+2), sct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x+2, 4*y+3), sct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+3, 4*y+2), sct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+3, 4*y+3), sct_2.getpixel((1, 1)))
+      
+      # even row
+      else:
+        share_1.putpixel((4*x, 4*y), sct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x, 4*y+1), sct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+1, 4*y), sct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+1, 4*y+1), sct_1.getpixel((1, 1)))
+        
+        share_1.putpixel((4*x+2, 4*y), cct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x+2, 4*y+1), cct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+3, 4*y), cct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+3, 4*y+1), cct_1.getpixel((1, 1)))
+
+        share_1.putpixel((4*x, 4*y+2), sct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x, 4*y+3), sct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+1, 4*y+2), sct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+1, 4*y+3), sct_1.getpixel((1, 1)))
+        
+        share_1.putpixel((4*x+2, 4*y+2), cct_1.getpixel((0, 0)))
+        share_1.putpixel((4*x+2, 4*y+3), cct_1.getpixel((0, 1)))
+        share_1.putpixel((4*x+3, 4*y+2), cct_1.getpixel((1, 0)))
+        share_1.putpixel((4*x+3, 4*y+3), cct_1.getpixel((1, 1)))
+        
+        share_2.putpixel((4*x, 4*y), sct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x, 4*y+1), sct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+1, 4*y), sct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+1, 4*y+1), sct_2.getpixel((1, 1)))
+        
+        share_2.putpixel((4*x+2, 4*y), cct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x+2, 4*y+1), cct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+3, 4*y), cct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+3, 4*y+1), cct_2.getpixel((1, 1)))
+        
+        share_2.putpixel((4*x, 4*y+2), sct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x, 4*y+3), sct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+1, 4*y+2), sct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+1, 4*y+3), sct_2.getpixel((1, 1)))
+        
+        share_2.putpixel((4*x+2, 4*y+2), cct_2.getpixel((0, 0)))
+        share_2.putpixel((4*x+2, 4*y+3), cct_2.getpixel((0, 1)))
+        share_2.putpixel((4*x+3, 4*y+2), cct_2.getpixel((1, 0)))
+        share_2.putpixel((4*x+3, 4*y+3), cct_2.getpixel((1, 1)))
+
+  share_1.save("outputs/our_Share_1.jpg")
+  share_2.save("outputs/our_Share_2.jpg")
+
+
+def emulateSuperposition(mode="paper"):
+
   share_1 = Image.open("outputs/Share_1.jpg").convert("CMYK")
   share_2 = Image.open("outputs/Share_2.jpg").convert("CMYK")
+  
+  if mode == "our":
+    share_1 = Image.open("outputs/our_Share_1.jpg").convert("CMYK")
+    share_2 = Image.open("outputs/our_Share_2.jpg").convert("CMYK")
 
   superposition = Image.new("CMYK", [share_1.size[0], share_1.size[1]])
 
@@ -346,6 +457,9 @@ def emulateSuperposition():
       superposition.putpixel((i, j),(c, m, y, 0) );
 
   superposition.save("outputs/Superposition.jpg")
+  
+  if mode == "our":
+    superposition.save("outputs/our_Superposition.jpg")
 
 
 
@@ -360,6 +474,7 @@ def parse(argv):
 if __name__ == "__main__":
   image1, image2, secret = parse(sys.argv[1:])       
  
+  CHECK_FOLDER = os.path.isdir("outputs")
   if not os.path.isdir("outputs"):
     os.makedirs("outputs")
   
@@ -369,10 +484,15 @@ if __name__ == "__main__":
   generateHalftone("1")
   generateHalftone("2")
   generateHalftone("s")
- 
+
+  # the method proposed in the paper 
   generateExtraction("1")
   generateExtraction("2")
   generateExtraction("s")
 
   generateShares()
   emulateSuperposition()
+
+  # our method
+  generateOurShares()
+  emulateSuperposition("our") 

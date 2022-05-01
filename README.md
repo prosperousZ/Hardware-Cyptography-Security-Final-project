@@ -8,8 +8,8 @@ visual cryptography schemes.
 
 
 ## Repository structure
-- src (pending) : source files
-- application (pending) :
+- src : source files
+- application : source code of generating meaningful shares
 - papers : related papers
 - utility : proprietary files
 

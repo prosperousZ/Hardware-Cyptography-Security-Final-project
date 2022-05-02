@@ -11,6 +11,7 @@ jobs:
     - run: pip3 install Pillow
     - run: pip3 install pycryptodome
     - run: pip3 install numpy
+    - run: pip3 install opencv-python
     - name: test AES
       run: cd src/AES; python3 ./main.py ../../images/photo.jpg
 

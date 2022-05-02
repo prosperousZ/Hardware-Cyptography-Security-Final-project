@@ -2,7 +2,6 @@
 
 import numpy as np
 from PIL import Image
-from ColourMetrics import psnr, normxcorr2D
 import cv2
 import sys
 import os

@@ -1,9 +1,11 @@
 import numpy as np
 from PIL import Image
-from ColourMetrics import psnr, normxcorr2D
 import cv2
 import sys
 import os
+
+sys.path.insert(0, "../../utility")
+import performance
 
 
 def combineShares(outputDireName, infile1, infile2, infile3, infile4):
@@ -28,6 +30,7 @@ def combineShares(outputDireName, infile1, infile2, infile3, infile4):
       outfile.putpixel((x+1, y+1), (C,M,Y,K))
 
   print("Combined Shares!")
+  
   return outfile
 
 
@@ -36,8 +39,8 @@ if __name__ == "__main__":
   
   n = len(sys.argv)
   current_directory = os.getcwd()
-  if(n <= 4):
-    sys.exit("Please select four shares")
+  if(n <= 5):
+    sys.exit("Please select four shares and the origianl image")
  
   try:
     infile1 = Image.open(current_directory + '/' + sys.argv[1])
@@ -54,6 +57,15 @@ if __name__ == "__main__":
   output_image = output_image.resize((int(infile1.size[0]/2),int(infile1.size[1]/2)))
   output_image.save(current_directory + '/decrypted.jpg', mode = "CMYK")
   print("\nImage is saved 'decrypted.jpg' ...")
+  
+  # performance evaluation
+  print("Evaluation metrics : ")
+  MSE = performance.MSE(sys.argv[5], "./decrypted.jpg")
+  print("MSE = " + str(MSE))
+  PSNR = performance.PSNR(sys.argv[5], "./decrypted.jpg")
+  print("PSNR = " + str(PSNR))
+  
+  
   
   output_image = Image.open(current_directory+'/decrypted.jpg')
   if output_image.mode == 'CMYK':

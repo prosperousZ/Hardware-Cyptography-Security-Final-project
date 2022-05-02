@@ -14,7 +14,7 @@ jobs:
     - run: pip3 install opencv-python
     - run: pip3 install pandas
     - name: test AES
-      run: cd src/AES; python3 ./main.py -i ../../images/photo.jpg
+      run: cd src/AES; python3 ./main.py ../../images/photo.jpg
     - name: test Halftone
       run: cd src/Halftone; python3 ./halftone.py ../../images/Lenna.jpg; python3 ./halftone_decry.py ./outputs/CMYK_Share3_1.jpg ./outputs/CMYK_Share3_2.jpg ./outputs/CMYK_Share3_3.jpg ./outputs/CMYK_Share3_shareMask.jpg ../../images/Lenna.jpg
     - name: test XOR

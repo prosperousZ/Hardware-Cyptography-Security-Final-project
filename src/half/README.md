@@ -17,7 +17,7 @@ In decryption process, the source code takes four encrypted share images which a
 ## Run
 ```
 python3 halftone.py test.png
-python3 halftone_decry.py ./outputs/CMKY_Shaere3_1.jpg ./outputs/CMKY_Shaere3_2.jpg ./outputs/CMKY_Shaere3_3.jpg ./outputs/CMKY_Shaere3_shareMask.jpg
+python3 halftone_decry.py ./outputs/CMKY_Share3_1.jpg ./outputs/CMKY_Share3_2.jpg ./outputs/CMKY_Share3_3.jpg ./outputs/CMKY_Share3_shareMask.jpg
 ```
 ### Reference
 - [Visual cryptography for color images](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.457.5077&rep=rep1&type=pdf)

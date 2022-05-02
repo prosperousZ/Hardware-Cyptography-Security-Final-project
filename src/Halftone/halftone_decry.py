@@ -8,7 +8,7 @@ sys.path.insert(0, "../../utility")
 import performance
 
 
-def combineShares(outputDireName, infile1, infile2, infile3, infile4):
+def combineShares(infile1, infile2, infile3, infile4):
   #infile1 = Image.open(outputDireName+'/CMYK_Share3_1.jpg')
   #infile2 = Image.open(outputDireName+'/CMYK_Share3_2.jpg')
   #infile3 = Image.open(outputDireName+'/CMYK_Share3_3.jpg')
@@ -38,24 +38,24 @@ def combineShares(outputDireName, infile1, infile2, infile3, infile4):
 if __name__ == "__main__":
   
   n = len(sys.argv)
-  current_directory = os.getcwd()
+  
   if(n <= 5):
     sys.exit("Please select four shares and the origianl image")
- 
+
   try:
-    infile1 = Image.open(current_directory + '/' + sys.argv[1])
-    infile2 = Image.open(current_directory+ '/' + sys.argv[2])
-    infile3 = Image.open(current_directory+'/' + sys.argv[3])
-    infile4 = Image.open(current_directory+'/' + sys.argv[4])
+    infile1 = Image.open(sys.argv[1])
+    infile2 = Image.open(sys.argv[2])
+    infile3 = Image.open(sys.argv[3])
+    infile4 = Image.open(sys.argv[4])
 
   except FileNotFoundError:
     sys.exit("Input file not found!")
 
   #create a folder to put outfiles
-  output_image = combineShares(current_directory,infile1,infile2,infile3,infile4)
+  output_image = combineShares(infile1,infile2,infile3,infile4)
   print("size: ",infile1.size)
   output_image = output_image.resize((int(infile1.size[0]/2),int(infile1.size[1]/2)))
-  output_image.save(current_directory + '/decrypted.jpg', mode = "CMYK")
+  output_image.save('./decrypted.jpg', mode = "CMYK")
   print("\nImage is saved 'decrypted.jpg' ...")
   
   # performance evaluation
@@ -67,7 +67,7 @@ if __name__ == "__main__":
   
   
   
-  output_image = Image.open(current_directory+'/decrypted.jpg')
+  output_image = Image.open('./decrypted.jpg')
   if output_image.mode == 'CMYK':
     output_image = output_image.convert('RGB')
   output_matrix = np.asarray(output_image)

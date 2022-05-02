@@ -16,7 +16,7 @@ In decryption process, the source code takes four encrypted share images which a
 ## Run
 ```
 python3 halftone.py test.png
-python3 halftone_decry.py ./outputs/CMKY_Share3_1.jpg ./outputs/CMKY_Share3_2.jpg ./outputs/CMKY_Share3_3.jpg ./outputs/CMKY_Share3_shareMask.jpg test.png
+python3 halftone_decry.py ./outputs/CMYK_Share3_1.jpg ./outputs/CMYK_Share3_2.jpg ./outputs/CMYK_Share3_3.jpg ./outputs/CMKY_Share3_shareMask.jpg test.png
 ```
 ### Reference
 - Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2009 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Visual%20cryptography%20for%20color%20images.pdf). 

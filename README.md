@@ -8,10 +8,11 @@ visual cryptography schemes.
 
 
 ## Repository structure
-- src : source files
+- src : source code
 - application : source code of generating meaningful shares
 - papers : related papers
-- utility : proprietary files
+- utility : proprietary code
+- images : the input images and the secret image
 
 ## Run
 ```bash

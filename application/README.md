@@ -2,14 +2,11 @@
 
 
 ## What is this implementation about?
-The purpose of this implementation is to encrypt a secret image using two cover images.
-Overlaying the two generated shares could decrypt and get the secret image back.
+The purpose of this implementation is to encrypt a secret image using two cover images (cover_image1 and cover_image2).
+Overlaying the two generated shares could decrypt and get the secret image (secret_image) back.
 
 ## Files
 - main.py : the implementation
-- image1.jpg : the first image for generating the first meaning share
-- image2.jpg : the second image for generating the second  meaning share
-- secret.jpg : the secret image to be encrypted
 - outputs/ : folders to store the shares
 
 ## Outputs
@@ -22,7 +19,11 @@ our_Share_1.jpg, our_Share_2.jpg and our_Superposition.jpg are the results using
 
 ## Run
 ```
-python3 main.py ./image1.jpg ./image2.jpg ./secret.jpg
+python3 main.py cover_image1 cover_image2 secret_image 
+```
+For example,
+```
+python3 main.py ../images/image1.jpg ../images/image2.jpg ../images/secret.jpg
 ```
 
 ## Reference

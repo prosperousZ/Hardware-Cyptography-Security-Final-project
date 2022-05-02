@@ -15,8 +15,7 @@ visual cryptography schemes.
 - images : the input images and the secret image
 
 ## Run
-```bash
-```
+To run the individual algorithm, please go to src/ and follow the command in the individual folder.
 
 
 ## Experimental results

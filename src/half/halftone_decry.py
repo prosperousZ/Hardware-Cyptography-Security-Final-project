@@ -54,7 +54,7 @@ if __name__ == "__main__":
     output_image.save(current_directory + '/decrypted.jpg', mode = "CMYK")
     print("\nImage is saved 'decrypted.jpg' ...")
     
-    output_image = Image.open(current_directory+'/decrypted.jpgc')
+    output_image = Image.open(current_directory+'/decrypted.jpg')
     if output_image.mode == 'CMYK':
         output_image = output_image.convert('RGB')
     output_matrix = np.asarray(output_image)

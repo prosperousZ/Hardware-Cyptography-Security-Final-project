@@ -21,3 +21,11 @@ visual cryptography schemes.
 
 ## Experimental results
 
+
+## Reference
+- Ankita Bisht, Mohit Dua, Shelza Dua, and Priyanka Jaroli, "A Color Image Encryption Technique Based on Bit-Level Permutation and Alternate Logistic maps," in "*Journal of Intelligent Systems*," 2019.
+- Jonatha Weir and WeiQi Yan, "A Comprehensive Study of Visual Cryptography," in "*Transaction on Data Hiding and Multimedia Security*," 2010.
+- Venkata Krishna Pavan Kalubandi, Hemanth Vaddi, Vishnu Ramineni, and Agilandeeswari Loganathan, "A novel image encryption algorithm using AES and visual cryptography," in *International Conference on Next Generation Computing Technologies (NGCT)*, 2016.
+- Hsien-Chu Wu, Hao-Cheng Wang, and Rui-Wen Yu, "Color Visual Cryptography Scheme Using Meaningful Shares," in *International Conference on Intelligent Systems Design and Applications*, 2008.
+- Rajesh Ramachandran and Jinu Mohan, "Exploration of Color Visual Cryptography Schemes," in *International Journal of Science and Research (IJSR)*, 2015. 
+- Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2009. 

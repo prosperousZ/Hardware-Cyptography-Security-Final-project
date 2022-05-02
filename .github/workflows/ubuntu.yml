@@ -15,4 +15,14 @@ jobs:
     - run: pip3 install pandas
     - name: test AES
       run: cd src/AES; python3 ./main.py -i ../../images/photo.jpg
+    - name: test Halftone
+      run: cd src/Halftone; python3 ./halftone.py ../../images/Lenna.jpg
+    - name: test Halftone_decry
+      run: cd src/Halftone; python3 ./halftone_decry.py ./outputs/CMKY_Share3_1.jpg ./outputs/CMKY_Share3_2.jpg ./outputs/CMKY_Share3_3.jpg ./outputs/CMKY_Share3_shareMask.jpg ../../images/Lenna.jpg
+    - name: test XOR
+      run: cd src/XOR; python3 ./main.py 8 ../../images/Lenna.jpg
+    - name: test application
+      run: cd application; python3 ./main.py ../images/image1.jpg ../images/image2.jpg ../images/secret.jpg
+
+
 

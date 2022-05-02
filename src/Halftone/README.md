@@ -19,4 +19,4 @@ python3 halftone.py test.png
 python3 halftone_decry.py ./outputs/CMKY_Share3_1.jpg ./outputs/CMKY_Share3_2.jpg ./outputs/CMKY_Share3_3.jpg ./outputs/CMKY_Share3_shareMask.jpg test.png
 ```
 ### Reference
-- [Visual cryptography for color images](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.457.5077&rep=rep1&type=pdf)
+- Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2009 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Visual%20cryptography%20for%20color%20images.pdf). 

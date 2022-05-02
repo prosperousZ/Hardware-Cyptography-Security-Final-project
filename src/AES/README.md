@@ -26,4 +26,4 @@ python3 main.py -i ../../images/photo.jpg
 
 
 ## Reference
-- Venkata Krishna Pavan Kalubandi, Hemanth Vaddi, Vishnu Ramineni, and Agilandeeswari Loganathan, "A Novel Image Encryption Algorithm using AES and Visual Cryptography," in *International Conference on Next Generation Computing Technologies*, 2016.
+- Venkata Krishna Pavan Kalubandi, Hemanth Vaddi, Vishnu Ramineni, and Agilandeeswari Loganathan, "A Novel Image Encryption Algorithm using AES and Visual Cryptography," in *International Conference on Next Generation Computing Technologies*, 2016 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/A%20Novel%20Image%20Encryption%20Algorithm%20using%20AES%20and%20VIsual%20Cryptography.pdf).

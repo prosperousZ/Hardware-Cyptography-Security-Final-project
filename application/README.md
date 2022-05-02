@@ -27,5 +27,5 @@ python3 main.py ../images/image1.jpg ../images/image2.jpg ../images/secret.jpg
 ```
 
 ## Reference
-- Hsien-Chu Wu, Hao-Cheng Wang, and Rui-Wen Yu, "Color Visual Cryptography Scheme Using Meaning Shares," in *International Conference on Intelligent Systems Design and Applications*, 2008.
-- Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2003. 
+- Hsien-Chu Wu, Hao-Cheng Wang, and Rui-Wen Yu, "Color Visual Cryptography Scheme Using Meaningful Shares," in *International Conference on Intelligent Systems Design and Applications*, 2008 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Color%20Visual%20Cryptography%20Scheme%20Using%20Meaningful%20Shares.pdf).
+- Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2003 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Visual%20cryptography%20for%20color%20images.pdf). 

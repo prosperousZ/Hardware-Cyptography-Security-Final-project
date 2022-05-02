@@ -184,11 +184,12 @@ def parse(argv):
 
 
 if __name__ == "__main__":
-  image = parse(sys.argv[1:])
-  encryption(image)
+  inputfile = sys.argv[1]
+  #image = parse(sys.argv[1:])
+  encryption(inputfile)
   decryption()
 
-  MSE = performance.MSE(image, "./decryptedImage.jpg")
+  MSE = performance.MSE(inputfile, "./decryptedImage.jpg")
   print("MSE = " + str(MSE))
-  PSNR = performance.PSNR(image, "./decryptedImage.jpg")
+  PSNR = performance.PSNR(inputfile, "./decryptedImage.jpg")
   print("PSNR = " + str(PSNR))

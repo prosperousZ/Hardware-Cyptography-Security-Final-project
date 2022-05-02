@@ -1,3 +1,5 @@
+[![Ubuntu](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/workflows/Ubuntu/badge.svg)](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/actions?query=workflow%3AUbuntu)
+
 # Visual Cryptography
 
 

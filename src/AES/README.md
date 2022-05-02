@@ -17,11 +17,11 @@ the paper. There are four generated files:
 
 ## Run
 ```
-python3 main.py -i image
+python3 main.py image
 ```
 For example,
 ```
-python3 main.py -i ../../images/photo.jpg
+python3 main.py ../../images/photo.jpg
 ```
 
 

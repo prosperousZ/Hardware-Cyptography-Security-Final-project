@@ -156,7 +156,7 @@ if __name__ == "__main__":
     print("Image uploaded successfully!")
     print("Input image size (in pixels) : ", input_image.size)   
     #create a folder to put outfiles
-    directory = "outputs" + "_" + inputFile
+    directory = "outputs"
     current_directory = os.getcwd()
     final_directory = os.path.join(current_directory, directory)
     if not os.path.exists(final_directory):

@@ -14,5 +14,5 @@ jobs:
     - run: pip3 install opencv-python
     - run: pip3 install pandas
     - name: test AES
-      run: cd src/AES; python3 ./main.py ../../images/photo.jpg
+      run: cd src/AES; python3 ./main.py -i ../../images/photo.jpg
 

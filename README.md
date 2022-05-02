@@ -29,3 +29,11 @@ visual cryptography schemes.
 - Hsien-Chu Wu, Hao-Cheng Wang, and Rui-Wen Yu, "Color Visual Cryptography Scheme Using Meaningful Shares," in *International Conference on Intelligent Systems Design and Applications*, 2008.
 - Rajesh Ramachandran and Jinu Mohan, "Exploration of Color Visual Cryptography Schemes," in *International Journal of Science and Research (IJSR)*, 2015. 
 - Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2009. 
+- https://www.datagenetics.com/blog/november32013/
+- https://github.com/fei1017/VisualCryptography
+- https://github.com/drilonsaiti/Visual-Cryptography
+- https://github.com/Shree987/Visual-Cryptography
+- https://github.com/hubert-kniola/VisualCryptography/tree/main/VisualCrypto
+- https://github.com/anushka23g/Half-Tone-Visual-Cryptography
+- https://github.com/avdeevvadim/visualcrypto
+

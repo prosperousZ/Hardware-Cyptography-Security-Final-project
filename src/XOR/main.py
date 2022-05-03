@@ -18,7 +18,7 @@ def encrypt(input_image, share_size):
   for i in range(share_size-1):
     shares[:,:,:,-1] = shares[:,:,:,-1] ^ shares[:,:,:,i]
 
-  return shares, image
+  return shares
 
 
 def decrypt(shares):
@@ -29,7 +29,7 @@ def decrypt(shares):
 
   final_output = shares_image[:,:,:,share_size-1]
   output_image = Image.fromarray(final_output.astype(np.uint8))
-  return output_image, final_output
+  return output_image
 
     
 if __name__ == "__main__":
@@ -62,14 +62,14 @@ if __name__ == "__main__":
 
   print("Number of shares image = ", share_size)
 
-  shares, input_matrix = encrypt(input_image, share_size)
+  shares = encrypt(input_image, share_size)
 
   for idx in range(share_size):
     image = Image.fromarray(shares[:,:,:,idx].astype(np.uint8))
     name = "./outputs/XOR_Share_" + str(idx+1) + ".jpg"
     image.save(name)
 
-  output_image, output_matrix = decrypt(shares)
+  output_image = decrypt(shares)
 
   output_image.save("./outputs/Output_XOR.jpg")
   print("Image is saved './outputs/Output_XOR.jpg' ...")

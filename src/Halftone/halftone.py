@@ -8,7 +8,6 @@ import os
 
 
 def CMYK_Decomposition(input_image,outputDireName):
-  input_matrix = np.asarray(input_image)
   outfile1 = Image.new("CMYK", [dimension for dimension in input_image.size])
   outfile2 = Image.new("CMYK", [dimension for dimension in input_image.size])
   outfile3 = Image.new("CMYK", [dimension for dimension in input_image.size])
@@ -28,7 +27,6 @@ def CMYK_Decomposition(input_image,outputDireName):
 
   print("CMYK Decomposition Done!")
 
-  return input_matrix
 
 
 def halftoneConversion(outputDireName):
@@ -164,6 +162,6 @@ if __name__ == "__main__":
   if not os.path.exists(final_directory):
     os.makedirs(final_directory)
 
-  input_matrix = CMYK_Decomposition(input_image,directory)
+  CMYK_Decomposition(input_image,directory)
   halftoneConversion(directory)
   generateShares(directory)

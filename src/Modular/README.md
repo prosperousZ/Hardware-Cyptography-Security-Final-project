@@ -2,7 +2,7 @@
 
 ## What is this implementation about?
 The purpose of this implementation is to encrypt and decrypt an image 
-using XOR and measure the performance.
+using Module and measure the performance.
 
 To run the code, just need to type in the number of shares images (share_size, 2~8) you
 want to create for encrypting, it will give all results in outputs folder.

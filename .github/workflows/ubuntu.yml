@@ -19,6 +19,8 @@ jobs:
       run: cd src/Halftone; python3 ./halftone.py ../../images/Lenna.jpg; python3 ./halftone_decry.py ./outputs/CMYK_Share3_1.jpg ./outputs/CMYK_Share3_2.jpg ./outputs/CMYK_Share3_3.jpg ./outputs/CMYK_Share3_shareMask.jpg ../../images/Lenna.jpg
     - name: test XOR
       run: cd src/XOR; python3 ./main.py 8 ../../images/Lenna.jpg
+    - name: test Modular
+      run: cd src/Modular; python3 ./main.py 8 ../../images/Lenna.jpg
     - name: test application
       run: cd application; python3 ./main.py ../images/image1.jpg ../images/image2.jpg ../images/secret.jpg
 

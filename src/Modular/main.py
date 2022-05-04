@@ -16,7 +16,7 @@ def encrypt(input_image, share_size):
   shares = np.random.randint(0, 256, size)
   shares[:,:,:,-1] = image.copy()
   for i in range(share_size-1):
-    shares[:,:,:,-1] = shares[:,:,:,-1] ^ shares[:,:,:,i]
+    shares[:,:,:,-1] = (shares[:,:,:,-1] + shares[:,:,:,i])%256
 
   return shares
 

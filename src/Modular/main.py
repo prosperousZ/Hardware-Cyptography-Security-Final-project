@@ -66,17 +66,17 @@ if __name__ == "__main__":
 
   for idx in range(share_size):
     image = Image.fromarray(shares[:,:,:,idx].astype(np.uint8))
-    name = "./outputs/Modula_Share_" + str(idx+1) + ".jpg"
+    name = "./outputs/Modular_Share_" + str(idx+1) + ".jpg"
     image.save(name)
 
   output_image = decrypt(shares)
 
-  output_image.save("./outputs/Output_Modula.jpg")
-  print("Image is saved './outputs/Output_Modula.jpg' ...")
+  output_image.save("./outputs/Output_Modular.jpg")
+  print("Image is saved './outputs/Output_Modular.jpg' ...")
   
   print("Evaluation metrics : ")
-  MSE = performance.MSE(inputfile, "./outputs/Output_Modula.jpg")
+  MSE = performance.MSE(inputfile, "./outputs/Output_Modular.jpg")
   print("MSE = " + str(MSE))
-  PSNR = performance.PSNR(inputfile, "./outputs/Output_Modula.jpg")
+  PSNR = performance.PSNR(inputfile, "./outputs/Output_Modular.jpg")
   print("PSNR = " + str(PSNR))
   

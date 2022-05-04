@@ -16,6 +16,15 @@ visual cryptography schemes.
 - utility : proprietary code
 - images : the input images and the secret image
 
+## Dependencies
+Please make sure the following Python dependencies are met
+- Pillow
+- pycryptodome
+- numpy
+- opencv-python
+- pandas
+
+
 ## Run
 To run the individual algorithm, please go to src/ and follow the command in the individual folder.
 

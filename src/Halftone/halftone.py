@@ -6,12 +6,10 @@ import sys
 import os
 
 #Decomposition the input image to three color shares
-def CMY_DeColor(input_image,outputDireName):
-  input_matrix = np.asarray(input_image)
+def CMY_DeColor(input_image):
   outfile1 = Image.new("CMYK", [dimension for dimension in input_image.size])
   outfile2 = Image.new("CMYK", [dimension for dimension in input_image.size])
   outfile3 = Image.new("CMYK", [dimension for dimension in input_image.size])
-
 
   for x in range(0, input_image.size[0], 1):
     for y in range(0, input_image.size[1], 1):
@@ -22,21 +20,20 @@ def CMY_DeColor(input_image,outputDireName):
       outfile2.putpixel((x, y),(0,sourcepixel[1],0,0))
       outfile3.putpixel((x, y),(0,0,sourcepixel[2],0))
 
-  outfile1.save(outputDireName+'/C.jpg')
-  outfile2.save(outputDireName+'/M.jpg')
-  outfile3.save(outputDireName+'/Y.jpg')
+  outfile1.save('./outputs/C.jpg')
+  outfile2.save('./outputs/M.jpg')
+  outfile3.save('./outputs/Y.jpg')
 
   print("CMY color Decomposition Done!")
 
-  return input_matrix
 
 
 
 #Convert c, m, k images to halfton image
-def ConvertToHalftone(outputDireName):
-  image1 = Image.open(outputDireName+"/C.jpg").convert('1')
-  image2 = Image.open(outputDireName+"/M.jpg").convert('1')
-  image3 = Image.open(outputDireName+"/Y.jpg").convert('1')
+def ConvertToHalftone():
+  image1 = Image.open("./outputs/C.jpg").convert('1')
+  image2 = Image.open("./outputs/M.jpg").convert('1')
+  image3 = Image.open("./outputs/Y.jpg").convert('1')
 
   hf1 = Image.new("CMYK", [dimension for dimension in image1.size])
   hf2 = Image.new("CMYK", [dimension for dimension in image1.size])
@@ -62,18 +59,18 @@ def ConvertToHalftone(outputDireName):
       else:
         hf3.putpixel((x, y),(0,0,0,0))
 
-  hf1.save(outputDireName+'/C_halftone.jpg')
-  hf2.save(outputDireName+'/M_halftone.jpg')
-  hf3.save(outputDireName+'/Y_halftone.jpg')
+  hf1.save('./outputs/C_halftone.jpg')
+  hf2.save('./outputs/M_halftone.jpg')
+  hf3.save('./outputs/Y_halftone.jpg')
 
   print("Halftone Conversion Done!")
 
 
 
-def generateShares(outputDireName):
-  image1 = Image.open(outputDireName+'/C_halftone.jpg').convert('CMYK')
-  image2 = Image.open(outputDireName+'/M_halftone.jpg').convert('CMYK')
-  image3 = Image.open(outputDireName+'/Y_halftone.jpg').convert('CMYK')
+def generateShares():
+  image1 = Image.open('./outputs/C_halftone.jpg').convert('CMYK')
+  image2 = Image.open('./outputs/M_halftone.jpg').convert('CMYK')
+  image3 = Image.open('./outputs/Y_halftone.jpg').convert('CMYK')
 
   share1 = Image.new("CMYK", [dimension * 2 for dimension in image1.size])
   share2 = Image.new("CMYK", [dimension * 2 for dimension in image2.size])
@@ -135,37 +132,34 @@ def generateShares(outputDireName):
         share3.putpixel((x * 2, y * 2 + 1), (0,0,255,0))
         share3.putpixel((x * 2 + 1, y * 2 + 1), (0,0,0,0))
 
-  share1.save(outputDireName+'/C_share.jpg')
-  share2.save(outputDireName+'/M_share.jpg')
-  share3.save(outputDireName+'/Y_share.jpg')
-  shareMask.save(outputDireName+'/shareMask.jpg')
+  share1.save('./outputs/C_share.jpg')
+  share2.save('./outputs/M_share.jpg')
+  share3.save('./outputs/Y_share.jpg')
+  shareMask.save('./outputs/shareMask.jpg')
 
   print("Generated Shares!")
 
+
+
 if __name__ == "__main__":
     
-    #print("Save input image as 'Input.png' in the same folder as this file\n")
-    n = len(sys.argv)
-    if(n <= 1):
-         sys.exit("Please select an input file") 
-    inputFile = sys.argv[1]
-    try:
-     
-        input_image = Image.open(inputFile)
+  n = len(sys.argv)
+  if(n <= 1):
+    sys.exit("Please select an input file") 
+  
+  try:
+    input_image = Image.open(sys.argv[1])
 
-    except FileNotFoundError:
-    	print("Input file not found!")
-    	exit(0)
+  except FileNotFoundError:
+    print("Input file not found!")
+    exit(0)
 
-    print("Image uploaded successfully!")
-    print("Input image size (in pixels) : ", input_image.size)   
-    #create a folder to put outfiles
-    directory = "outputs"
-    current_directory = os.getcwd()
-    final_directory = os.path.join(current_directory, directory)
-    if not os.path.exists(final_directory):
-      os.makedirs(final_directory)
+  print("Input image size (in pixels) : ", input_image.size)   
+  
+  #create a folder to put outfiles
+  if not os.path.exists('outputs'):
+    os.makedirs('outputs')
 
-    input_matrix = CMY_DeColor(input_image,directory)
-    ConvertToHalftone(directory)
-    generateShares(directory)
+  CMY_DeColor(input_image)
+  ConvertToHalftone()
+  generateShares()

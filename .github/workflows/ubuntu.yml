@@ -22,7 +22,7 @@ jobs:
     - name: test application 1 - AES
       run: cd applications/AES; python3 ./main.py ../../images/photo.jpg
     - name: test application 2 - Meaningful Shares
-      run: cd applications/Meaningful_Share; python3 ./main.py ../../images/image1.jpg ../../images/image2.jpg ../../images/secret.jpg
+      run: cd applications/Meaningful_Shares; python3 ./main.py ../../images/image1.jpg ../../images/image2.jpg ../../images/secret.jpg
 
 
 

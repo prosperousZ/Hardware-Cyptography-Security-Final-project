@@ -20,9 +20,9 @@ jobs:
     - name: test Modular
       run: cd src/Modular; python3 ./main.py 8 ../../images/Lenna.jpg
     - name: test application 1 - AES
-      run: cd src/AES; python3 ./main.py ../../images/photo.jpg
+      run: cd applications/AES; python3 ./main.py ../../images/photo.jpg
     - name: test application 2 - Meaningful Shares
-      run: cd application; python3 ./main.py ../../images/image1.jpg ../../images/image2.jpg ../../images/secret.jpg
+      run: cd applications/Meaningful_Share; python3 ./main.py ../../images/image1.jpg ../../images/image2.jpg ../../images/secret.jpg
 
 
 

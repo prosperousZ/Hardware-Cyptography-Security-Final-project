@@ -12,6 +12,9 @@ import sys, getopt
 import pandas as pd
 import os
 
+sys.path.insert(0, "../../utility")
+import performance
+
 
 class AESCipher:
   def __init__(self, data, key):

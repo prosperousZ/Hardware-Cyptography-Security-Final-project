@@ -3,6 +3,7 @@ from PIL import Image
 import sys
 import os
 
+sys.path.insert(0, "../../utility")
 import performance
 
 #combine four shares to get the decrypted image.
@@ -51,13 +52,13 @@ if __name__ == "__main__":
     
       # performance evaluation
     print("Evaluation metrics : ")
-    MSE = performance.MSE(sys.argv[5], "./decrypted.jpg")
+    MSE = performance.MSE(sys.argv[5], "./outputs/decrypted.jpg")
     print("MSE = " + str(MSE))
-    PSNR = performance.PSNR(sys.argv[5], "./decrypted.jpg")
+    PSNR = performance.PSNR(sys.argv[5], "./outputs/decrypted.jpg")
     print("PSNR = " + str(PSNR))
   
 
-    output_image = Image.open('./decrypted.jpg')
+    output_image = Image.open('./outputs/decrypted.jpg')
     if output_image.mode == 'CMYK':
         output_image = output_image.convert('RGB')
     output_matrix = np.asarray(output_image)

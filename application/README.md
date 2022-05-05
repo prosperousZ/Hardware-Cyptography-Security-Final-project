@@ -1,9 +1,9 @@
-# Visual Cryptography with Meaning Shares 
+# Visual Cryptography with Meaningful Shares 
 
 
 ## What is this implementation about?
 The purpose of this implementation is to encrypt a secret image using two cover images (cover_image1 and cover_image2).
-Overlaying the two generated shares could decrypt and get the secret image (secret_image) back.
+Overlaying the two generated meaningful shares could decrypt and get the secret image (secret_image) back.
 
 ## Files
 - main.py : the implementation

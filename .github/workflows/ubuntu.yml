@@ -13,16 +13,16 @@ jobs:
     - run: pip3 install numpy
     - run: pip3 install opencv-python
     - run: pip3 install pandas
-    - name: test AES
-      run: cd src/AES; python3 ./main.py ../../images/photo.jpg
     - name: test Halftone
       run: cd src/Halftone; python3 ./halftone.py ../../images/Lenna.jpg; python3 ./halftone_decry.py ./outputs/C_share.jpg ./outputs/M_share.jpg ./outputs/Y_share.jpg ./outputs/shareMask.jpg ../../images/Lenna.jpg
     - name: test XOR
       run: cd src/XOR; python3 ./main.py 8 ../../images/Lenna.jpg
     - name: test Modular
       run: cd src/Modular; python3 ./main.py 8 ../../images/Lenna.jpg
-    - name: test application
-      run: cd application; python3 ./main.py ../images/image1.jpg ../images/image2.jpg ../images/secret.jpg
+    - name: test application 1 - AES
+      run: cd src/AES; python3 ./main.py ../../images/photo.jpg
+    - name: test application 2 - Meaningful Shares
+      run: cd application; python3 ./main.py ../../images/image1.jpg ../../images/image2.jpg ../../images/secret.jpg
 
 
 

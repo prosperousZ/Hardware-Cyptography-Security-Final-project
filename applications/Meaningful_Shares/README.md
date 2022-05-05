@@ -23,7 +23,7 @@ python3 main.py cover_image1 cover_image2 secret_image
 ```
 For example,
 ```
-python3 main.py ../images/image1.jpg ../images/image2.jpg ../images/secret.jpg
+python3 main.py ../../images/image1.jpg ../../images/image2.jpg ../../images/secret.jpg
 ```
 
 ## Reference

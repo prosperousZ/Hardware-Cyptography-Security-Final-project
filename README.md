@@ -5,13 +5,16 @@
 
 ## What is this project about?
 This is a final project of ECE6960-Hardware_Cryptography.
-The purpose of this project is to implement and evaluate the three famous
-visual cryptography schemes.
+The purpose of this project is to implement and evaluate three
+visual cryptography algorithms, XOR, Modular, and Halftone.
+In addition to the three algorithms, two applications are developed.
+One is to use AES and Visual Cryptography to protect an image.
+The other is to generate meaningful shares.
 
 
 ## Repository structure
-- src : source code
-- application : source code of generating meaningful shares
+- src : source code of three algorithms
+- applications : source code of two applications
 - papers : related papers
 - utility : proprietary code
 - images : the input images and the secret image
@@ -26,11 +29,12 @@ Please make sure the following Python dependencies are met
 
 
 ## Run
-To run the individual algorithm, please go to src/ and follow the command in the individual folder.
+To run the individual algorithm, please go to src/ and follow the README in the individual folder.
+To run the applications, please go to applications/ and follow the README in the corresponding folder.
 
 
 ## Experimental results
-
+Our project report is available at [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/final_report.pdf). 
 
 ## Reference
 - Ankita Bisht, Mohit Dua, Shelza Dua, and Priyanka Jaroli, "A Color Image Encryption Technique Based on Bit-Level Permutation and Alternate Logistic maps," in "*Journal of Intelligent Systems*," 2019 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/A%20Color%20Image%20Encryption%20Technique%20Based%20on%20Bit-Level%20Permutation%20and%20Alternate%20Logistic%20Maps.pdf).

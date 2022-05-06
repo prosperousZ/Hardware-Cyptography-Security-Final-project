@@ -8,20 +8,20 @@ import os
 def generateCMYK(path, name):
   image = Image.open(path)
 
-  outfile_1 = Image.new("CMYK", [dimension for dimension in image.size])
-  outfile_2 = Image.new("CMYK", [dimension for dimension in image.size])
-  outfile_s = Image.new("CMYK", [dimension for dimension in image.size])
+  outfile_c = Image.new("CMYK", [dimension for dimension in image.size])
+  outfile_m = Image.new("CMYK", [dimension for dimension in image.size])
+  outfile_y = Image.new("CMYK", [dimension for dimension in image.size])
 
   for x in range(0, image.size[0], 1):
     for y in range(0, image.size[1], 1):
       pixel = image.getpixel((x, y))
-      outfile_1.putpixel((x, y), (pixel[0], 0, 0, 0))
-      outfile_2.putpixel((x, y), (0, pixel[1], 0, 0))
-      outfile_s.putpixel((x, y), (0, 0, pixel[2], 0))
+      outfile_c.putpixel((x, y), (pixel[0], 0, 0, 0))
+      outfile_m.putpixel((x, y), (0, pixel[1], 0, 0))
+      outfile_y.putpixel((x, y), (0, 0, pixel[2], 0))
 
-  outfile_1.save("outputs/CMYK_" + name + "_C.jpg")
-  outfile_2.save("outputs/CMYK_" + name + "_M.jpg")
-  outfile_s.save("outputs/CMYK_" + name + "_Y.jpg")
+  outfile_c.save("outputs/CMYK_" + name + "_C.jpg")
+  outfile_m.save("outputs/CMYK_" + name + "_M.jpg")
+  outfile_y.save("outputs/CMYK_" + name + "_Y.jpg")
 
 
 def generateHalftone(name):

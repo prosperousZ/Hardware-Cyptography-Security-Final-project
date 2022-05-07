@@ -43,6 +43,7 @@ Our project report is available at [link](https://github.com/cheng-hsiang-chiu/E
 - Hsien-Chu Wu, Hao-Cheng Wang, and Rui-Wen Yu, "Color Visual Cryptography Scheme Using Meaningful Shares," in *International Conference on Intelligent Systems Design and Applications*, 2008 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Color%20Visual%20Cryptography%20Scheme%20Using%20Meaningful%20Shares.pdf).
 - Rajesh Ramachandran and Jinu Mohan, "Exploration of Color Visual Cryptography Schemes," in *International Journal of Science and Research (IJSR)*, 2015 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Exploration%20of%20Color%20Visual%20Cryptography%20Schemes.pdf). 
 - Young-Chang Hou, "Visual cryptography for color images," in *Pattern Recognition*, 2009 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/Visual%20cryptography%20for%20color%20images.pdf). 
+- Nidhin Soman and Smruthy Baby, "XOR-BASEDVISUAL CRYPTOGRAPHY," in *International Journal on Cybernetics & Informatic*, 2016 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/XOR-BASEDVISUAL%20CRYPTOGRAPHY.pdf)
 - https://www.datagenetics.com/blog/november32013/
 - https://github.com/fei1017/VisualCryptography
 - https://github.com/drilonsaiti/Visual-Cryptography

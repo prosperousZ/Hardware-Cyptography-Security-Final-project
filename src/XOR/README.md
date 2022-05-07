@@ -21,3 +21,6 @@ For example,
 ```
 python3 ./main.py 3 ../../images/Lenna.jpg
 ```
+
+## Reference
+- Nidhin Soman and Smruthy Baby, "XOR-BASEDVISUAL CRYPTOGRAPHY," in *International Journal on Cybernetics & Informatic*, 2016 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/XOR-BASEDVISUAL%20CRYPTOGRAPHY.pdf)

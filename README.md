@@ -33,9 +33,6 @@ To run the individual algorithm, please go to src/ and follow the README in the 
 To run the applications, please go to applications/ and follow the README in the corresponding folder.
 
 
-## Experimental results
-Our project report is available at [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/final_report.pdf). 
-
 ## Reference
 - Ankita Bisht, Mohit Dua, Shelza Dua, and Priyanka Jaroli, "A Color Image Encryption Technique Based on Bit-Level Permutation and Alternate Logistic maps," in "*Journal of Intelligent Systems*," 2019 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/A%20Color%20Image%20Encryption%20Technique%20Based%20on%20Bit-Level%20Permutation%20and%20Alternate%20Logistic%20Maps.pdf).
 - Jonatha Weir and WeiQi Yan, "A Comprehensive Study of Visual Cryptography," in "*Transaction on Data Hiding and Multimedia Security*," 2010 [link](https://github.com/cheng-hsiang-chiu/ECE6960-Final-Project/blob/master/papers/A%20Comprehensive%20Study%20of%20Visual%20Cryptography.pdf).
